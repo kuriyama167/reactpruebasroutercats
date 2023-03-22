@@ -6,7 +6,8 @@ import {
     Route,
     Routes,
     Link,
-    useParams
+    useParams,
+    Outlet
 } from "react-router-dom";
 const Home = () => Element = <h1>Home</h1>
 
@@ -35,9 +36,22 @@ const {name} = useParams()
           <div>
               <h1>Gatos</h1>
             <p>{name}</p>
+              <Link to='details'>Ir a los detalles</Link>
+              <Outlet />
           </div>
       )
+}
 
+const GatoDetails = () => {
+    const {name} = useParams()
+    return (
+        <div>
+        <h1>Taco DEtails{name}</h1>
+
+        </div>
+
+
+    )
 
 }
 
@@ -60,6 +74,8 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/SearchPage' element={<SearchPage/>}/>
               <Route path='/gatos/:name' element={<Gatos/>}/>
+                 <Route path='details' element={<GatoDetails/>}/>
+
           </Routes>
 
 
