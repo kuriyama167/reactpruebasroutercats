@@ -2,12 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Footer from './Componets.js/Footer';
 import {
     Route,
     Routes,
     Link,
     useParams,
-    Outlet
+    Outlet, NavLink,
 } from "react-router-dom";
 const Home = () => Element = <h1>Home</h1>
 
@@ -34,25 +35,36 @@ const SearchPage = ()  =>  {
 const {name} = useParams()
       return(
           <div>
+              <Outlet />
               <h1>Gatos</h1>
+
             <p>{name}</p>
               <Link to='details'>Ir a los detalles</Link>
-              <Outlet />
+
+
           </div>
       )
 }
 
-const GatoDetails = () => {
+const GatoDetail = () => {
     const {name} = useParams()
     return (
         <div>
-        <h1>Taco DEtails{name}</h1>
+        <h1>Gato DEtails{name}</h1>
 
         </div>
 
 
     )
 
+}
+
+const NotFound = () => {
+    return(
+        <div>
+            <h1>Not Found</h1>
+        </div>
+    )
 }
 
 function App() {
@@ -63,10 +75,15 @@ function App() {
               <h1>Meow app react </h1>
               <nav>
                   <ul>
-                      <li>
-                          <Link to='/SearchPage'> Search Page </Link>
-                      </li>
-                  <li><Link to='/'> Home </Link></li>
+                      <NavLink
+                      className={({isActive}) => {
+                      console.log({isActive})
+                      return isActive ? 'is-active' : undefined
+                      }}
+                         to='/'
+                      >Home
+                      </NavLink>
+                  <li><Link to='/SearchPage'> SearchPage </Link></li>
                   </ul>
               </nav>
           </header>
@@ -74,13 +91,13 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/SearchPage' element={<SearchPage/>}/>
               <Route path='/gatos/:name' element={<Gatos/>}/>
-                 <Route path='details' element={<GatoDetails/>}/>
-
+                 <Route path='/gatos/:name/details' element={<GatoDetail/>}>
+                   </Route>
+              <Route path='*' element={<NotFound/>}/>
           </Routes>
-
-
-
+          <Footer/>
       </div>
+
 
 
   )
