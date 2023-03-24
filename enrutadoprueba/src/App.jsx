@@ -2,13 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Footer from './Componets.js/Footer';
+
 import {
     Route,
     Routes,
     Link,
     useParams,
-    Outlet, NavLink,
+    Outlet, NavLink as NavLinkReactRouter,
 } from "react-router-dom";
 const Home = () => Element = <h1>Home</h1>
 
@@ -67,6 +67,19 @@ const NotFound = () => {
     )
 }
 
+const NavLink = ({to, children, ...props}) => {
+  return(
+    <NavLinkReactRouter
+      {...props}
+      className={({ isActive }) =>{
+      return isActive ? 'is-active' : undefined
+      }}
+      to={to}
+    > {children}
+    </NavLinkReactRouter>
+  )
+}
+
 function App() {
 
   return (
@@ -75,15 +88,8 @@ function App() {
               <h1>Meow app react </h1>
               <nav>
                   <ul>
-                      <NavLink
-                      className={({isActive}) => {
-                      console.log({isActive})
-                      return isActive ? 'is-active' : undefined
-                      }}
-                         to='/'
-                      >Home
-                      </NavLink>
-                  <li><Link to='/SearchPage'> SearchPage </Link></li>
+                    <li><NavLink to='/'> Home</NavLink></li>
+                    <li><NavLink to='/searchPage'> SearchPage</NavLink></li>
                   </ul>
               </nav>
           </header>
@@ -95,7 +101,7 @@ function App() {
                    </Route>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
-          <Footer/>
+
       </div>
 
 
