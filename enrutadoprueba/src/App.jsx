@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import { NavLink } from './Componets/NavLink.jsx'
 import './App.css'
-
 import {
     Route,
     Routes,
     Link,
     useParams,
-    Outlet, NavLink as NavLinkReactRouter,
+    Outlet,
 } from "react-router-dom";
 const Home = () => Element = <h1>Home</h1>
 
@@ -67,18 +67,6 @@ const NotFound = () => {
     )
 }
 
-const NavLink = ({to, children, ...props}) => {
-  return(
-    <NavLinkReactRouter
-      {...props}
-      className={({ isActive }) =>{
-      return isActive ? 'is-active' : undefined
-      }}
-      to={to}
-    > {children}
-    </NavLinkReactRouter>
-  )
-}
 
 function App() {
 
@@ -88,8 +76,8 @@ function App() {
               <h1>Meow app react </h1>
               <nav>
                   <ul>
-                    <li><NavLink to='/'> Home</NavLink></li>
-                    <li><NavLink to='/searchPage'> SearchPage</NavLink></li>
+                    <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button"><NavLink to='/'> Home</NavLink></button>
+                    <button><NavLink to='/searchPage'> SearchPage</NavLink></button>
                   </ul>
               </nav>
           </header>

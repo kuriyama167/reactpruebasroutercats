@@ -1,5 +1,7 @@
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #root {
   max-width: 1280px;
@@ -54,4 +56,10 @@ nav a{
 nav a.is-active{
   font-weight: bold;
   pointer-events: none;
+}
+
+button{
+  background: antiquewhite;
+  border-radius: 20px;
+  padding: 2em;
 }

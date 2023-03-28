@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav ul{
+    list-style-type: none;
+}
+nav a{
+    text-decoration: none;
+}
+
+nav a.is-active{
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.button{
+    background: aliceblue;
+}
