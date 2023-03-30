@@ -1,0 +1,52 @@
+{
+  "personas" : [
+    {
+      "id": 1,
+      "FirstName": "Clara",
+      "SecondNameSecondName": "Isabel",
+      "Apellido1": "Velasquez",
+      "Apellido2": "Rodriguez",
+      "FechaNacimiento": 20010706 ,
+      "Unificado": true
+    },
+    {
+      "id": 2,
+      "FirstName": "Moises",
+      "SecondName": "Isabel",
+      "Apellido1": "Reyes",
+      "Apellido2": "",
+      "FechaNacimiento": 20010706 ,
+      "Unificado": true
+    },
+    {
+      "id": 3,
+      "FirstName": "Kenia",
+      "SecondName": "Michelle",
+      "Apellido1": "Ruiz",
+      "Apellido2": "",
+      "FechaNacimiento": 20010706 ,
+      "Unificado": true
+    },
+    {
+      "id": 4,
+      "FirstName": "KENIA",
+      "SecondName": "Isabel",
+      "Apellido1": "Velasquez",
+      "Apellido2": "Rodriguez",
+      "FechaNacimiento": 20010706 ,
+      "Unificado": true
+    },
+    {
+      "id": 5,
+      "FirstName": "meow",
+      "SecondName": "Isabel",
+      "Apellido1": "Velas",
+      "Apellido2": "Rodriguez",
+      "FechaNacimiento": 20010706 ,
+      "Unificado": true
+    }
+
+
+
+  ]
+}
